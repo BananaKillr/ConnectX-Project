@@ -2,3 +2,5 @@
 /.env
 /backend/db/recipes.sqlite
 /backend/data/
+/backend/rag/faiss_ingredients.index
+/backend/rag/ingredients_map.pkl

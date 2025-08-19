@@ -4,18 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de33867f-a121-4bb2-9762-3e9746a997ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/pythonProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Utils/nutrition.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Utils/text_norm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    <list default="true" id="de33867f-a121-4bb2-9762-3e9746a997ca" name="Changes" comment="AAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHH">
+      <change afterPath="$PROJECT_DIR$/backend/api/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/rag/context.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/rag/generator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/rag/pipeline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/rag/retriever.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/frontend.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pythonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pythonProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/db/build_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db/build_db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/db/normalize_recipenlg.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db/normalize_recipenlg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/db/normalize_usda.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db/normalize_usda.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/db/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/rag/embeddings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/rag/embeddings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,26 +36,39 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;BananaKillr&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/BananaKillr/ConnectX-Project.git&quot;,
+    &quot;accountId&quot;: &quot;dace2369-a029-4e1e-82be-acf62d2fe7a2&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="31SfXtH4dALv8pwbVTtDT2yDq7Y" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.build_db (1).executor": "Run",
-    "Python.build_db.executor": "Run",
-    "Python.normalize_recipenlg.executor": "Run",
-    "Python.normalize_usda.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.build_db (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.build_db.executor&quot;: &quot;Run&quot;,
+    &quot;Python.embeddings.executor&quot;: &quot;Run&quot;,
+    &quot;Python.normalize_recipenlg.executor&quot;: &quot;Run&quot;,
+    &quot;Python.normalize_usda.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Python.build_db (1)">
+}</component>
+  <component name="RunManager" selected="Python.embeddings">
     <configuration name="build_db (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject" />
       <option name="ENV_FILES" value="" />
@@ -74,7 +91,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="build_db" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="embeddings" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pythonProject" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -83,11 +100,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/db" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/rag" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db/build_db.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/rag/embeddings.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -96,10 +113,14 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.build_db (1)" />
+      <item itemvalue="Python.embeddings" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.embeddings" />
         <item itemvalue="Python.build_db (1)" />
-        <item itemvalue="Python.build_db" />
       </list>
     </recent_temporary>
   </component>
@@ -119,6 +140,22 @@
       <option name="presentableId" value="Default" />
       <updated>1755522436675</updated>
     </task>
+    <task id="LOCAL-00001" summary="AAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHH">
+      <option name="closed" value="true" />
+      <created>1755531357513</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1755531357513</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="AAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHH" />
+    <option name="LAST_COMMIT_MESSAGE" value="AAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHH" />
   </component>
 </project>

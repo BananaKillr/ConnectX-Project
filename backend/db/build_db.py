@@ -1,11 +1,12 @@
-# db/build_db.py
+# backend/db/build_db.py
 import sqlite3
 from pathlib import Path
 from normalize_usda import main as build_usda
 from normalize_recipenlg import main as build_nlg
 
+ROOT_DIR = Path(__file__).resolve().parents[1]
 DB_PATH = "recipes.sqlite"
-SCHEMA  = r"C:\Users\youss\Desktop\Connect X\AAAAAAAAHHHH\pythonProject\backend\db\schema.sql"
+SCHEMA  = "schema.sql"
 
 def main():
     if not Path(DB_PATH).exists():

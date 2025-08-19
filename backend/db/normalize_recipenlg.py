@@ -1,50 +1,46 @@
 # backend/db/normalize_recipenlg.py
 import os
+from pathlib import Path
+
 import pandas as pd
 import sqlite3
 from backend.utils.text_norm import canonicalize_name
 
-NLG_PATH = r"C:\Users\youss\Desktop\Connect X\AAAAAAAAHHHH\pythonProject\backend\data\recipenlg\full_dataset.csv"
-DB_PATH  = "recipes.sqlite"
+ROOT_DIR = Path(__file__).resolve().parents[1]
+DB_PATH  = ROOT_DIR / "db" / "recipes.sqlite"
 
-# Adjust these column names if your CSV differs
+NLG_PATH = ROOT_DIR / "data" / "recipenlg" / "full_dataset.csv"
+
 C_TITLE   = "title"
-C_INGR    = "ingredients"      # stringified list or text
-C_METHOD  = "directions"       # instructions / method
-C_TAGS    = "ner"              # or "tags" if present
+C_INGR    = "ingredients"
+C_METHOD  = "directions"
+C_TAGS    = "ner"  # maps directly to schema `tags` column
 
 def split_ingredients(raw) -> list[str]:
     if pd.isna(raw):
         return []
-    # Many RecipeNLG builds store it like: "['1 cup quinoa','2 tomatoes',...]"
-    txt = str(raw).strip()
-    txt = txt.strip("[]")
+    txt = str(raw).strip().strip("[]")
     parts = [p.strip(" '\"") for p in txt.split(",") if p.strip()]
-    # Fallback: semicolon or newline
     if len(parts) <= 1:
         parts = [s.strip() for s in txt.replace("\n", ";").split(";") if s.strip()]
     return parts
 
-def parse_tags(raw) -> str:
-    if pd.isna(raw):
-        return ""
-    return ",".join(sorted({t.strip().lower() for t in str(raw).split(",") if t.strip()}))
-
 def main():
-    df = pd.read_csv(NLG_PATH)
-    df = df.fillna("")
+    df = pd.read_csv(NLG_PATH).fillna("")
+    df = df.sample(n=25000, random_state=42)
 
     conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
-    for _, r in df.iterrows():
+
+    for idx, r in df.iterrows():
         title = r.get(C_TITLE, "").strip() or "Untitled"
         text  = str(r.get(C_METHOD, "")).strip()
-        meal_tags = ""  # optional: derive from title/text
-        diet_tags = ""  # optional: derive with a classifier later
+        tags  = str(r.get(C_TAGS, "")).strip()
+
         cur.execute("""
-          INSERT INTO recipes (source_id, title, text, meal_tags, diet_tags)
-          VALUES (?, ?, ?, ?, ?)
-        """, (str(_), title, text, meal_tags, diet_tags))
+          INSERT INTO recipes (source_id, title, text, tags)
+          VALUES (?, ?, ?, ?)
+        """, (str(idx), title, text, tags))
         recipe_id = cur.lastrowid
 
         ingredients = split_ingredients(r.get(C_INGR, ""))
@@ -57,7 +53,7 @@ def main():
 
     conn.commit()
     conn.close()
-    print("RecipeNLG normalization complete.")
+    print("RecipeNLG normalization (25000 recipes) complete.")
 
 if __name__ == "__main__":
     main()
